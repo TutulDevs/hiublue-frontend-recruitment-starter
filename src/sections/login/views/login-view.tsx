@@ -89,7 +89,7 @@ export default function SignIn() {
     setToast({ open: false, message: "", severity: undefined });
   };
 
-  const form = useForm<LoginSchemaType>({
+  const form = useForm({
     resolver: zodResolver(loginSchema),
   });
 

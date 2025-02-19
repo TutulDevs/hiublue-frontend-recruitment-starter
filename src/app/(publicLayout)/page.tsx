@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 export const metadata = {
-  title: "Dashbord",
+  title: "Home",
 };
 
 export default function Page() {

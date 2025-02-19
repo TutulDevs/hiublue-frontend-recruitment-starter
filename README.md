@@ -30,8 +30,8 @@ We are providing:
 
 - ✅ A login page will be already there, you have to implement the api first.
 - ✅ Store authentication state using **Context API and LocalStorage**.
-- Make sure no unauthorized user has access to the dashboard or any other routes.
-- Show different layouts for **authenticated vs. non-authenticated users**.
+- ✅ Make sure no unauthorized user has access to the dashboard or any other routes.
+- ✅ Show different layouts for **authenticated vs. non-authenticated users**.
 
 ### **2. Admin Dashboard**
 
