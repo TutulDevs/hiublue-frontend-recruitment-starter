@@ -4,6 +4,10 @@ First of all, congratulations on being shortlisted for the Frontend Developer po
 
 You will be provided with a **starter repository** that includes the basic project setup. Your task is to build a functional admin portal with authentication, data visualization on dashboard, basic onboarding offer functionality while integrating API.
 
+## Hiring Link
+
+- https://hiring.hiublue.com/front-end-coding-challenge
+
 We are providing:
 
 - [**Figma design link**](https://www.figma.com/design/p4aO5zxiLUkws5DDTTWP92/Untitled?node-id=0-1&t=oePPLG5LIUguMtQy-1)
@@ -24,8 +28,8 @@ We are providing:
 
 ### **1. Authentication**
 
-- A login page will be already there, you have to implement the api first.
-- Store authentication state using **Context API and LocalStorage**.
+- ✅ A login page will be already there, you have to implement the api first.
+- ✅ Store authentication state using **Context API and LocalStorage**.
 - Make sure no unauthorized user has access to the dashboard or any other routes.
 - Show different layouts for **authenticated vs. non-authenticated users**.
 
@@ -83,21 +87,34 @@ npm install
 
 ## **Evaluation Criteria**
 
-| **Category** | **Evaluation Criteria** |
-| --- | --- |
-| **Code Quality** | Readability, structure, component-based approach |
-| **TypeScript Usage** | Proper typing of components, hooks, data types, API responses |
-| **API Handling** | Proper usage of necessary caching, error handling |
-| **UI & UX** | Clean UI, responsiveness, MUI usage, adherence to Figma design. Using MUI is a must. |
-| **Authentication** | Token-based authentication, proper auth state management using Context API & LocalStorage |
-| **Table Features** | Proper implementation of pagination, searching using. |
-| **Form Handling** | Correct usage of React Hook Form and proper validation |
-| **Onboarding Offer** | Ability to select users, send onboarding requests |
-| **Error & Success Messages** | Proper display of validation errors and success messages |
-| **Git Practices** | Clean commits, meaningful messages, proper branching |
+| **Category**                 | **Evaluation Criteria**                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------------------- |
+| **Code Quality**             | Readability, structure, component-based approach                                          |
+| **TypeScript Usage**         | Proper typing of components, hooks, data types, API responses                             |
+| **API Handling**             | Proper usage of necessary caching, error handling                                         |
+| **UI & UX**                  | Clean UI, responsiveness, MUI usage, adherence to Figma design. Using MUI is a must.      |
+| **Authentication**           | Token-based authentication, proper auth state management using Context API & LocalStorage |
+| **Table Features**           | Proper implementation of pagination, searching using.                                     |
+| **Form Handling**            | Correct usage of React Hook Form and proper validation                                    |
+| **Onboarding Offer**         | Ability to select users, send onboarding requests                                         |
+| **Error & Success Messages** | Proper display of validation errors and success messages                                  |
+| **Git Practices**            | Clean commits, meaningful messages, proper branching                                      |
 
 ## **Deadline**
 
 You have **4 days** to complete this challenge.
 
 Good luck!
+
+```js
+https://documenter.getpostman.com/view/8605001/2sAYXFiHWQ
+
+https://www.figma.com/design/p4aO5zxiLUkws5DDTTWP92/hiublue-Frontend-Recruitment-Task?node-id=0-1&p=f&t=Y12SylXWRKjMEzal-0
+
+http://localhost:3000/
+
+https://mui.com/material-ui/react-snackbar/#customization
+
+https://github.dev/RittikaDev/hiublue-frontend-recruitment-starter
+
+```
