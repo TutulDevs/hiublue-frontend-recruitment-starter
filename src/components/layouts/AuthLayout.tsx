@@ -66,7 +66,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         component="main"
         sx={{
           flexGrow: 1,
-          px: 5,
+          px: { xs: 3, md: 5 },
           width: { md: `calc(100% - ${DRAWER_WIDTH}px)` },
         }}
       >

@@ -35,12 +35,12 @@ We are providing:
 
 ### **2. Admin Dashboard**
 
-- Fetch **real-time data** from the provided API.
-- Display the data in an table with:
+- ✅ Fetch **real-time data** from the provided API.
+- ✅ Display the data in an table with:
   - Pagination
   - Searching
   - Filtering
-- Show **charts** based on API data using **ApexCharts**.
+- ✅ Show **charts** based on API data using **ApexCharts**.
 
 ### **3. Sending Onboarding Offer**
 

@@ -2,26 +2,12 @@
 
 import { getDashboardSummary } from "@/lib/api";
 import { DashboardSummaryType } from "@/lib/globalTypes";
-import {
-  Box,
-  Card,
-  FormControl,
-  Grid,
-  MenuItem,
-  Typography,
-} from "@mui/material";
+import { Box, Card, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Image from "next/image";
 
-export default function DashboardSummary() {
-  const filters = ["this-week", "prev-week"];
-  const [filter, setFilter] = useState(filters[0]);
+const DashboardSummary: React.FC<{ filter: string }> = ({ filter }) => {
   const [summary, setSummary] = useState<DashboardSummaryType | null>(null);
-
-  const handleFilterChange = (event: SelectChangeEvent) => {
-    setFilter(event.target.value);
-  };
 
   useEffect(() => {
     getDashboardSummary(filter).then((data) => setSummary(data));
@@ -47,43 +33,6 @@ export default function DashboardSummary() {
 
   return (
     <>
-      {/* header & filter */}
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          mb: 3,
-        }}
-      >
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 700,
-            fontSize: "24px",
-            lineHeight: "36px",
-            color: "#1C252E",
-          }}
-        >
-          Dashboard
-        </Typography>
-
-        <FormControl size="small">
-          <Select
-            id="filter-select-small"
-            value={filter}
-            onChange={handleFilterChange}
-          >
-            {filters.map((f) => (
-              <MenuItem key={f} value={f}>
-                {f}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Box>
-
-      {/* cards */}
       <Grid container spacing={3}>
         {summaryList.map((data) => {
           const cur = data.valueCurrent;
@@ -143,4 +92,6 @@ export default function DashboardSummary() {
       </Grid>
     </>
   );
-}
+};
+
+export default DashboardSummary;
