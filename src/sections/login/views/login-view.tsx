@@ -80,7 +80,7 @@ export default function SignIn() {
 
   const handleClose = (
     event: React.SyntheticEvent | Event,
-    reason?: SnackbarCloseReason
+    reason?: SnackbarCloseReason,
   ) => {
     if (reason === "clickaway") {
       return;
@@ -90,6 +90,7 @@ export default function SignIn() {
   };
 
   const form = useForm({
+    mode: "all",
     resolver: zodResolver(loginSchema),
   });
 

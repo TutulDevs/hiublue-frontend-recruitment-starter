@@ -6,7 +6,7 @@ export const metadata = {
   title: "Dashboard",
 };
 
-export default function Page() {
+export default function DashboardPage() {
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mb: 3 }}>

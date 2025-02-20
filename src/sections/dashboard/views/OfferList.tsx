@@ -1,7 +1,7 @@
 "use client";
 
 import { getOffersList } from "@/lib/api";
-import { PaginatedResponse } from "@/lib/globalTypes";
+import { OfferTypes, PaginatedResponse } from "@/lib/globalTypes";
 import {
   Box,
   Card,
@@ -38,15 +38,15 @@ const types = [
   },
   {
     label: "Yearly",
-    value: "yearly",
+    value: OfferTypes.YEARLY,
   },
   {
     label: "Monthly",
-    value: "monthly",
+    value: OfferTypes.MONTHLY,
   },
   {
     label: "Pay as you go",
-    value: "pay-as-you-go",
+    value: OfferTypes.PAY_AS_YOU_GO,
   },
 ];
 
@@ -77,7 +77,7 @@ const OfferList = () => {
     <>
       <Card sx={{ p: 3 }}>
         <Typography variant="subtitle2" sx={{ mb: 2.5 }}>
-          Website visits
+          Offer List
         </Typography>
 
         {/* tabs */}
@@ -203,8 +203,8 @@ const OfferList = () => {
                         offer.status == "accepted"
                           ? "success"
                           : offer.status == "rejected"
-                          ? "error"
-                          : "warning"
+                            ? "error"
+                            : "warning"
                       }
                       size="small"
                       sx={{

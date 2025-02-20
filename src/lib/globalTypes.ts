@@ -45,7 +45,11 @@ export type DashboardStatsType = {
 };
 
 export type OfferStatus = "accepted" | "rejected" | "pending";
-export type SubscriptionType = "yearly" | "monthly" | "pay-as-you-go";
+export enum OfferTypes {
+  YEARLY = "yearly",
+  MONTHLY = "monthly",
+  PAY_AS_YOU_GO = "pay_as_you_go",
+}
 
 export type Offer = {
   id: number;
@@ -55,7 +59,7 @@ export type Offer = {
   company: string;
   jobTitle: string;
   status: OfferStatus;
-  type: SubscriptionType;
+  type: OfferTypes;
   price: number;
 };
 
@@ -80,4 +84,10 @@ export type PaginatedResponse = {
   data: Offer[];
   links: PaginationLinks;
   meta: PaginationMeta;
+};
+
+export type User = {
+  id: number;
+  name: string;
+  email: string;
 };

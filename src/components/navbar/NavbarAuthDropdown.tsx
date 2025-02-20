@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 const NavbarAuthDropdown = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
+    null,
   );
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {

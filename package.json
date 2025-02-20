@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "pretty:all": "prettier --write .",
+    "pretty": "pretty-quick",
     "post-update": "echo \"codesandbox preview only, need an update\" && pnpm update --latest"
   },
   "dependencies": {
@@ -18,14 +20,17 @@
     "@mui/icons-material": "^6.4.5",
     "@mui/material": "^6.4.4",
     "@mui/material-nextjs": "next",
+    "@mui/x-date-pickers": "^7.27.0",
     "apexcharts": "^4.4.0",
     "cookies-next": "^5.1.0",
+    "dayjs": "^1.11.13",
     "lodash": "^4.17.21",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "use-debounce": "^10.0.4",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -35,6 +40,8 @@
     "@types/react-dom": "^19.0.0",
     "eslint": "latest",
     "eslint-config-next": "^15.0.0",
+    "prettier": "^3.5.1",
+    "pretty-quick": "^4.0.0",
     "typescript": "latest"
   }
 }

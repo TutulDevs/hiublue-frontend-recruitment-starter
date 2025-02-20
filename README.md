@@ -45,9 +45,9 @@ We are providing:
 ### **3. Sending Onboarding Offer**
 
 - Implement a **separate page** where the admin can send onboarding offers to new users.
-- Allow the admin to **select a user** from a list and fill in additional fields. Do use Mui Autocomplete component. Instead of pulling all users, perform searching using api.
-- Using **React Hook Form** is preferred but not mandatory.
-- Validate the data before submitting using packages like yup and zod.
+- ✅ Allow the admin to **select a user** from a list and fill in additional fields. Do use Mui Autocomplete component. Instead of pulling all users, perform searching using api.
+- ✅ Using **React Hook Form** is preferred but not mandatory.
+- ✅ Validate the data before submitting using packages like yup and zod.
 
 ### **4. Git & Code Structure**
 

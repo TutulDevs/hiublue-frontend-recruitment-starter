@@ -1,9 +1,9 @@
-import { alpha, Theme } from '@mui/material/styles';
-import { alertClasses, AlertProps } from '@mui/material/Alert';
+import { alpha, Theme } from "@mui/material/styles";
+import { alertClasses, AlertProps } from "@mui/material/Alert";
 
 // ----------------------------------------------------------------------
 
-const COLORS = ['info', 'success', 'warning', 'error'] as const;
+const COLORS = ["info", "success", "warning", "error"] as const;
 
 // ----------------------------------------------------------------------
 
@@ -11,11 +11,11 @@ export function alert(theme: Theme) {
   const lightMode = true;
 
   const rootStyles = (ownerState: AlertProps) => {
-    const standardVariant = ownerState.variant === 'standard';
+    const standardVariant = ownerState.variant === "standard";
 
-    const filledVariant = ownerState.variant === 'filled';
+    const filledVariant = ownerState.variant === "filled";
 
-    const outlinedVariant = ownerState.variant === 'outlined';
+    const outlinedVariant = ownerState.variant === "outlined";
 
     const colorStyle = COLORS.map((color) => ({
       ...(ownerState.severity === color && {
@@ -24,7 +24,7 @@ export function alert(theme: Theme) {
           color: theme.palette[color],
           backgroundColor: theme.palette[color],
           [`& .${alertClasses.icon}`]: {
-            color: theme.palette[color][lightMode ? 'main' : 'light'],
+            color: theme.palette[color][lightMode ? "main" : "light"],
           },
         }),
         // FILLED
@@ -35,7 +35,7 @@ export function alert(theme: Theme) {
         // OUTLINED
         ...(outlinedVariant && {
           backgroundColor: alpha(theme.palette[color].main, 0.08),
-          color: theme.palette[color][lightMode ? 'dark' : 'light'],
+          color: theme.palette[color][lightMode ? "dark" : "light"],
           border: `solid 1px ${alpha(theme.palette[color].main, 0.16)}`,
           [`& .${alertClasses.icon}`]: {
             color: theme.palette[color].main,
@@ -50,7 +50,8 @@ export function alert(theme: Theme) {
   return {
     MuiAlert: {
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: AlertProps }) => rootStyles(ownerState),
+        root: ({ ownerState }: { ownerState: AlertProps }) =>
+          rootStyles(ownerState),
         icon: {
           opacity: 1,
         },

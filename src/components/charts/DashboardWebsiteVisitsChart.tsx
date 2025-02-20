@@ -38,7 +38,7 @@ const DashboardWebsiteVisitsChart: React.FC<{
       },
       xaxis: {
         categories: Object.keys(data).map(
-          (day) => day[0].toUpperCase() + day.slice(1, 3)
+          (day) => day[0].toUpperCase() + day.slice(1, 3),
         ),
         axisBorder: { show: false },
         axisTicks: { show: false },

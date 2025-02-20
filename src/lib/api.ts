@@ -1,6 +1,11 @@
 import { getCookie } from "cookies-next/client";
-import { LoginSchemaType } from "./schemas";
-import { DashboardStatsType, DashboardSummaryType } from "./globalTypes";
+import { CreateOfferSchemaType, LoginSchemaType } from "./schemas";
+import {
+  DashboardStatsType,
+  DashboardSummaryType,
+  PaginatedResponse,
+  User,
+} from "./globalTypes";
 
 const API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
@@ -25,7 +30,7 @@ export const login = async (data: LoginSchemaType) => {
 };
 
 export const getDashboardSummary = async (
-  filter: string
+  filter: string,
 ): Promise<DashboardSummaryType | null> => {
   try {
     const res = await fetch(`${API_URL}/dashboard/summary?filter=${filter}`, {
@@ -46,7 +51,7 @@ export const getDashboardSummary = async (
 };
 
 export const getDashboardStats = async (
-  filter: string
+  filter: string,
 ): Promise<DashboardStatsType | null> => {
   try {
     const res = await fetch(`${API_URL}/dashboard/stat?filter=${filter}`, {
@@ -78,7 +83,7 @@ export const getOffersList = async ({
   search?: string;
   type?: string;
   status?: string;
-}): Promise<any | null> => {
+}): Promise<PaginatedResponse | null> => {
   try {
     const queryParams = new URLSearchParams({
       page: page.toString(),
@@ -103,4 +108,40 @@ export const getOffersList = async ({
     console.log(error);
     return null;
   }
+};
+
+export const getUsersList = async (status: string): Promise<User[] | null> => {
+  try {
+    const queryParams = new URLSearchParams({
+      page: String(1),
+      per_page: String(10),
+      ...(status && { status }),
+    });
+
+    const res = await fetch(`${API_URL}/users?${queryParams}`, {
+      method: "GET",
+      headers: getTokenInHeaders(),
+      redirect: "follow",
+    });
+
+    if (!res?.ok) throw new Error(res?.statusText);
+
+    const data = await res.json();
+
+    return !data?.data ? null : data.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export const createOffer = async (data: CreateOfferSchemaType) => {
+  const res = await fetch(`${API_URL}/offers`, {
+    method: "POST",
+    headers: getTokenInHeaders(),
+    body: JSON.stringify(data),
+    redirect: "follow",
+  });
+
+  return res;
 };

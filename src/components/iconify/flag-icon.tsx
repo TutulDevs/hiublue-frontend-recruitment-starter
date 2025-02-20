@@ -1,10 +1,9 @@
-import type { BoxProps } from '@mui/material/Box';
-import Box from '@mui/material/Box';
-import type { SxProps, Theme } from '@mui/material/styles';
+import type { BoxProps } from "@mui/material/Box";
+import Box from "@mui/material/Box";
+import type { SxProps, Theme } from "@mui/material/styles";
 
-import { forwardRef } from 'react';
-import { iconifyClasses } from './classes';
-
+import { forwardRef } from "react";
+import { iconifyClasses } from "./classes";
 
 // ----------------------------------------------------------------------
 
@@ -18,12 +17,12 @@ export const FlagIcon = forwardRef<HTMLSpanElement, FlagIconProps>(
       width: 26,
       height: 20,
       flexShrink: 0,
-      overflow: 'hidden',
-      borderRadius: '5px',
-      alignItems: 'center',
-      display: 'inline-flex',
-      justifyContent: 'center',
-      bgcolor: 'background.neutral',
+      overflow: "hidden",
+      borderRadius: "5px",
+      alignItems: "center",
+      display: "inline-flex",
+      justifyContent: "center",
+      bgcolor: "background.neutral",
     };
 
     if (!code) {
@@ -34,7 +33,7 @@ export const FlagIcon = forwardRef<HTMLSpanElement, FlagIconProps>(
       <Box
         ref={ref}
         component="span"
-        className={iconifyClasses.flag.concat(className ? ` ${className}` : '')}
+        className={iconifyClasses.flag.concat(className ? ` ${className}` : "")}
         sx={{ ...baseStyles, ...sx }}
         {...other}
       >
@@ -46,11 +45,11 @@ export const FlagIcon = forwardRef<HTMLSpanElement, FlagIconProps>(
           sx={{
             width: 1,
             height: 1,
-            maxWidth: 'unset',
-            objectFit: 'cover',
+            maxWidth: "unset",
+            objectFit: "cover",
           }}
         />
       </Box>
     );
-  }
+  },
 );

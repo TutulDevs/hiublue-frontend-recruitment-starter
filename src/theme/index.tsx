@@ -36,7 +36,7 @@ export default function ThemeProvider({ children }: Props) {
       shape: { borderRadius: 8 },
       typography,
     }),
-    []
+    [],
   );
 
   const theme = createTheme(memoizedValue as ThemeOptions);
