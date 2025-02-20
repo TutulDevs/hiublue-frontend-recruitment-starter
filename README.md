@@ -44,7 +44,7 @@ We are providing:
 
 ### **3. Sending Onboarding Offer**
 
-- Implement a **separate page** where the admin can send onboarding offers to new users.
+- ✅ Implement a **separate page** where the admin can send onboarding offers to new users.
 - ✅ Allow the admin to **select a user** from a list and fill in additional fields. Do use Mui Autocomplete component. Instead of pulling all users, perform searching using api.
 - ✅ Using **React Hook Form** is preferred but not mandatory.
 - ✅ Validate the data before submitting using packages like yup and zod.
@@ -105,16 +105,3 @@ npm install
 You have **4 days** to complete this challenge.
 
 Good luck!
-
-```js
-https://documenter.getpostman.com/view/8605001/2sAYXFiHWQ
-
-https://www.figma.com/design/p4aO5zxiLUkws5DDTTWP92/hiublue-Frontend-Recruitment-Task?node-id=0-1&p=f&t=Y12SylXWRKjMEzal-0
-
-http://localhost:3000/
-
-https://mui.com/material-ui/react-snackbar/#customization
-
-https://github.dev/RittikaDev/hiublue-frontend-recruitment-starter
-
-```

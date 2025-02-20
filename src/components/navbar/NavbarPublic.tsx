@@ -17,7 +17,15 @@ function NavbarPublic() {
     <>
       <CssBaseline enableColorScheme />
 
-      <AppBar position="static" color="primary">
+      <AppBar
+        position="static"
+        sx={{
+          backdropFilter: "blur(8px)",
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar
             disableGutters
@@ -28,7 +36,7 @@ function NavbarPublic() {
               component={Link}
               href="/"
               sx={{
-                color: "inherit",
+                color: "primary",
                 textDecoration: "none",
               }}
             >
@@ -42,7 +50,7 @@ function NavbarPublic() {
                   component={Link}
                   href="/dashboard"
                   sx={{
-                    color: "inherit",
+                    color: "primary",
                     textDecoration: "none",
                   }}
                 >
@@ -57,7 +65,7 @@ function NavbarPublic() {
                 component={Link}
                 href="/login"
                 sx={{
-                  color: "inherit",
+                  color: "primary",
                   textDecoration: "none",
                   ml: "auto",
                 }}
@@ -68,7 +76,7 @@ function NavbarPublic() {
               <Button
                 variant="text"
                 sx={{
-                  color: "inherit",
+                  color: "primary",
                   textDecoration: "none",
                   ml: "auto",
                 }}

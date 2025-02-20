@@ -78,6 +78,10 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
             width: { md: `calc(100% - ${DRAWER_WIDTH}px)` },
             ml: { md: `${DRAWER_WIDTH}px` },
             minHeight: "72px !important",
+            backdropFilter: "blur(8px)",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            borderBottom: 1,
+            borderColor: "divider",
           }}
         >
           <Toolbar sx={{ minHeight: "72px !important" }}>

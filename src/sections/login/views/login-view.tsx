@@ -196,7 +196,12 @@ export default function SignIn() {
             />
 
             {/* submit btn */}
-            <Button type="submit" fullWidth variant="contained">
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Signing in..." : "Sign in"}
             </Button>
 

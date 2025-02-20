@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { LOCALSTORAGE_KEYS } from "@/lib/coreconstants";
 import { setCookie, deleteCookie } from "cookies-next/client";
+import { LOCALSTORAGE_KEYS } from "@/lib/globalTypes";
 
 type User = {
   id: number;

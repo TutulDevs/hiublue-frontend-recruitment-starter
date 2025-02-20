@@ -1,5 +1,10 @@
 import { AlertProps } from "@mui/material";
 
+export enum LOCALSTORAGE_KEYS {
+  USER_INFO = "userInfo",
+  TOKEN = "token",
+}
+
 export type SnackbarDataType = {
   open: boolean;
   message: string;

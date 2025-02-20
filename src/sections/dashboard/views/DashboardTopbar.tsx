@@ -1,7 +1,7 @@
 import { Box, FormControl, MenuItem, Select, Typography } from "@mui/material";
 
 const DashboardTopbar: React.FC<{
-  filters: string[];
+  filters: { value: string; label: string }[];
   filter: string;
   onChange: (v: string) => void;
 }> = ({ filters, filter, onChange }) => {
@@ -34,8 +34,8 @@ const DashboardTopbar: React.FC<{
             onChange={(e) => onChange(e.target.value)}
           >
             {filters.map((f) => (
-              <MenuItem key={f} value={f}>
-                {f}
+              <MenuItem key={f.value} value={f.value}>
+                {f.label}
               </MenuItem>
             ))}
           </Select>

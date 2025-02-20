@@ -308,6 +308,7 @@ export default function CreateOfferForm() {
             variant="contained"
             size="large"
             color="inherit"
+            disabled={isSubmitting}
           >
             {isSubmitting ? "Sending Offer..." : "Send Offer"}
           </Button>

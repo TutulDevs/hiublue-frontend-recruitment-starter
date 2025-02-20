@@ -2,15 +2,19 @@
 
 import { getDashboardSummary } from "@/lib/api";
 import { DashboardSummaryType } from "@/lib/globalTypes";
-import { Box, Card, Grid, Typography } from "@mui/material";
+import { Box, Card, Grid, Typography, CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const DashboardSummary: React.FC<{ filter: string }> = ({ filter }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [summary, setSummary] = useState<DashboardSummaryType | null>(null);
 
   useEffect(() => {
-    getDashboardSummary(filter).then((data) => setSummary(data));
+    setIsLoading(true);
+    getDashboardSummary(filter)
+      .then((data) => setSummary(data))
+      .finally(() => setIsLoading(false));
   }, [filter]);
 
   const summaryList = [
@@ -51,40 +55,55 @@ const DashboardSummary: React.FC<{ filter: string }> = ({ filter }) => {
                   {data.title}
                 </Typography>
 
-                <Typography variant="h3" sx={{ mb: 1 }}>
-                  {cur >= 1000
-                    ? `${
-                        (cur / 1000).toFixed(2).slice(0, -3) ===
-                        (cur / 1000).toFixed(0)
-                          ? (cur / 1000).toFixed(0)
-                          : (cur / 1000).toFixed(2)
-                      }k`
-                    : cur}
-                </Typography>
+                {isLoading ? (
+                  <Box
+                    sx={{
+                      height: 100,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <CircularProgress />
+                  </Box>
+                ) : (
+                  <>
+                    <Typography variant="h3" sx={{ mb: 1 }}>
+                      {cur >= 1000
+                        ? `${
+                            (cur / 1000).toFixed(2).slice(0, -3) ===
+                            (cur / 1000).toFixed(0)
+                              ? (cur / 1000).toFixed(0)
+                              : (cur / 1000).toFixed(2)
+                          }k`
+                        : cur}
+                    </Typography>
 
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexFlow: "row wrap",
-                    gap: 0.5,
-                  }}
-                >
-                  <Image
-                    src={diff < 0 ? "/arrow-neg.png" : "/arrow-pos.png"}
-                    alt=""
-                    width={24}
-                    height={24}
-                  />
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexFlow: "row wrap",
+                        gap: 0.5,
+                      }}
+                    >
+                      <Image
+                        src={diff < 0 ? "/arrow-neg.png" : "/arrow-pos.png"}
+                        alt=""
+                        width={24}
+                        height={24}
+                      />
 
-                  <Typography variant="subtitle2" sx={{}}>
-                    {Math.abs(Number(percentChange)) + "%"}
-                  </Typography>
+                      <Typography variant="subtitle2" sx={{}}>
+                        {Math.abs(Number(percentChange)) + "%"}
+                      </Typography>
 
-                  <Typography variant="body2" sx={{}}>
-                    previous month
-                  </Typography>
-                </Box>
+                      <Typography variant="body2" sx={{}}>
+                        previous month
+                      </Typography>
+                    </Box>
+                  </>
+                )}
               </Card>
             </Grid>
           );
