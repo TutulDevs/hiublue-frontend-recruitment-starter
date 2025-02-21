@@ -4,6 +4,10 @@
 
 This project is a functional admin portal built using **Next.js**, **TypeScript**, and **Material UI (MUI)**. It includes features such as authentication, data visualization, and onboarding functionalities, as outlined in the assessment provided by hiublue.
 
+## Live Demo
+
+[🚀 Live Demo](https://hiublue-test.vercel.app/)
+
 ## Table of Contents
 
 - [Installation](#installation)
